@@ -1,0 +1,13 @@
+import mongoose from "mongoose";
+const connectDB =async()=>{
+    mongoose.connection.on("connected",()=>{
+        console.log("database connected");
+    })
+    console.log('MongoDB URI:', process.env.MONGODB_URI);
+await mongoose.connect(process.env.MONGODB_URI);
+
+}
+export default connectDB
+
+
+
