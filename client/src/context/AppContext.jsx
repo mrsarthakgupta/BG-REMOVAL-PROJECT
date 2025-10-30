@@ -35,12 +35,13 @@ const AppContextProvider = (props) => {
 
   useEffect(() => {
     if (token) loadCreditsData();
-  }, [token]);
+  }, [token]);       //To reload credits when token changes meaning user logs in or out
 
   const getToken = () => localStorage.getItem('token');
 
   const removeBg = async (file) => {
     try {
+      setResultImage(null);
       setImage(file);
       navigate('/result');
 

@@ -19,6 +19,7 @@ const userSchema=new mongoose.Schema({
     }
 })
 
+//This line checks if the model already exits in mongoose.models to avoid OverwriteModelError and if not, it creates a new model.
 const userModel= mongoose.models.user || mongoose.model("user",userSchema)
 
 export default userModel;

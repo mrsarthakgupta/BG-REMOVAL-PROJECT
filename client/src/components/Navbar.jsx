@@ -4,7 +4,6 @@ import {Link, useNavigate} from 'react-router-dom'
 import { AppContext } from '../context/AppContext'
 
 const Navbar = () => {
-// const {user}=useContext(AppContext);
   const {user, setShowLogin , logout,credit} = useContext(AppContext)
   const navigate =useNavigate();
   return (
@@ -27,7 +26,7 @@ const Navbar = () => {
         </div>
        </div>
        :
-        <button onClick={()=> setShowLogin(true)} className='bg-zinc-800 text-white flex items-center gap-4 px-4 px-2 sm:px-8 sm : py-3 text-sm rounded-full '>Get Started 
+        <button onClick={()=> setShowLogin(true)} className='bg-zinc-800 text-white flex items-center gap-4 px-4  sm:px-8 sm : py-3 text-sm rounded-full '>Get Started 
         <img  src={assets.arrow_icon} alt="" />
       </button>}
     </div>

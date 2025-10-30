@@ -19,10 +19,9 @@ app.use(cors());
 app.use('/uploads', express.static('uploads'));
 
 
-
 // api routes
 app.use('/api/user',userRouter);
 app.get('/' ,(req ,res)=>res.send("API working"))
 app.use('/api/image',imageRouter)
 
-app.listen(PORT ,()=>console.log("Server running on port" + PORT))
+app.listen(PORT ,()=>console.log("Server running on port " + PORT))
