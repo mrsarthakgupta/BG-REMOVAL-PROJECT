@@ -15,7 +15,11 @@ await connectDB();
 
 //  middlewares
 app.use(express.json())
-app.use(cors());
+app.use(cors({
+    origin: ["https://bg-removal-project-kappa.vercel.app"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  }));
 app.use('/uploads', express.static('uploads'));
 
 
