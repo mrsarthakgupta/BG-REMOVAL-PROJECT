@@ -54,8 +54,8 @@ A production-ready **full-stack SaaS-style AI Background Removal Web App** built
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone <your-repo-url>
-cd <project-folder>
+git clone https://github.com/mrsarthakgupta/BG-REMOVAL-PROJECT
+cd BG-REMOVAL-PROJECT
 ```
 
 ---
