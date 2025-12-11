@@ -1,6 +1,8 @@
 # 🖼️ AI Background Removal (Full-Stack MERN SaaS)
 
 A production-ready **full-stack SaaS-style AI Background Removal Web App** built using the **MERN stack**. Users can upload images and instantly remove the background using the **ClipDrop AI API**, manage credits, authenticate securely, and purchase credits via Razorpay.
+* **Frontend (Vercel):** [https://bg-removal-project-kappa.vercel.app](https://bg-removal-project-kappa.vercel.app)
+* **Backend (Render):** [https://bg-removal-project-server.onrender.com](https://bg-removal-project-server.onrender.com)
 
 ---
 
@@ -48,6 +50,54 @@ A production-ready **full-stack SaaS-style AI Background Removal Web App** built
 * **ClipDrop API**
 
 ---
+## 🏗️ Architecture Overview
+
+```markdown
+## 🏗️ Architecture Overview
+
+Client (React + Vite + Tailwind)
+|
+| ---> API Requests (Axios)
+|
+Backend (Node + Express)
+|
+| ---> JWT Authentication
+| ---> Razorpay Payment Integration
+| ---> Credit Deduction Logic
+| ---> ClipDrop AI API Processing
+|
+Database (MongoDB + Mongoose)
+```
+---
+## 📁 Folder Structure
+
+<details>
+<summary><strong>📦 Click to expand the full project structure</strong></summary>
+
+  
+    BG-REMOVAL-PROJECT/
+    │
+    ├── client/                     # Frontend (React + Vite)
+    │   ├── src/
+    │   │   ├── components/
+    │   │   ├── pages/
+    │   │   ├── context/
+    │   │   ├── utils/
+    │   │   └── App.jsx
+    │   └── vite.config.js
+    │
+    ├── server/                     # Backend (Node + Express)
+    │   ├── controllers/
+    │   ├── models/
+    │   ├── routes/
+    │   ├── middleware/
+    │   └── server.js
+    │
+    └── README.md
+
+
+</details>
+
 
 ## 📦 Installation & Setup
 
@@ -109,14 +159,43 @@ VITE_RAZORPAY_KEY_ID=your_test_key
 ```bash
 npm run dev
 ```
-
 ---
+## 🔌 API Endpoints
 
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| **POST** | `/api/auth/signup` | Register a new user |
+| **POST** | `/api/auth/login` | Log in user and return JWT token |
+| **GET**  | `/api/user/credits` | Get user credit balance |
+| **POST** | `/api/payment/create-order` | Create Razorpay order for credits |
+| **POST** | `/api/payment/verify` | Verify Razorpay payment signature |
+| **POST** | `/api/remove-bg` | Remove background using ClipDrop AI |
+---
 ## 🌐 Deployment Links
 
 * **Frontend (Vercel):** [https://bg-removal-project-kappa.vercel.app](https://bg-removal-project-kappa.vercel.app)
 * **Backend (Render):** [https://bg-removal-project-server.onrender.com](https://bg-removal-project-server.onrender.com)
 
+---
+## 🧠 What I Learned
+
+- How to integrate AI APIs (ClipDrop) for real-time image processing  
+- Implementing secure JWT authentication with protected routes  
+- Building a credit-based usage system linked to payments  
+- Connecting Razorpay payment gateway (order creation + verification)  
+- Handling binary image responses and file downloads  
+- Structuring scalable MERN applications with clean folder architecture  
+- Deploying frontend on Vercel and backend on Render  
+- Managing environment variables and API keys securely
+---
+## 🗺️ Roadmap (Future Enhancements) 
+-  Bulk background removal (multiple images at once)  
+-  User analytics dashboard  
+-  Subscription-based plans (monthly/yearly)  
+-  Additional AI tools like Enhance, Upscale, Blur, Shadow Generation  
+-  Admin panel for managing users, payments, and credits  
+-  Dark mode UI for better user experience  
+-  Faster backend queue system for heavy image processing
 ---
 
 ## 🎯 Summary
